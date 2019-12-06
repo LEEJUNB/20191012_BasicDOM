@@ -1,39 +1,21 @@
-const titleman = document.querySelector("#title"); // DOM
-titleman.innerHTML = "what up";
+const title = document.querySelector("#title");
+title.innerHTML = "GOODD";
 
-const BASE_COLOR = "rgb(52, 73, 94)"; // "#34495e" 라고 입력하면 적용안됨
-const OTHER_COLOR = "#7f8c8d";
+
+const CLICKED_CLASS = "clicked";  // className을 만듦
 
 function handleClick(){
-    const currentColor = title.style.color;
-    if (currentColor === BASE_COLOR){
-        title.style.color = OTHER_COLOR;
+    const currentClass = title.className; // Q.className : id(title)과 함께있는 class를 의미
+    console.log(currentClass);
+    if(currentClass !== CLICKED_CLASS){ 
+        title.className = CLICKED_CLASS; // clicked로 변경하면서 clicked에 지정된 css속성도 적용 
     } else {
-        title.style.color = BASE_COLOR;
+        title.className = "";
     }
 }
 
-function init(){ // 초기페이지 (초기화)
-    title.style.color = BASE_COLOR;
-    title.addEventListener("mouseenter", handleClick);
+// ?이벤트발생이전인데 왜 노랑색인가
+function init(){
+    title.addEventListener("click",handleClick);
 }
-init(); // 초기화 실행
-
-function handleOffline() {
-    console.log("ByeBye!!");
-}
-
-function handleOnlne(){
-    console.log("Welcome!!");
-}
-
-window.addEventListener("offline",handleOffline);
-window.addEventListener("online",handleOnlne);
-
-// if ("10"===10){
-//     console.log("101010")
-// } else if ("10" == 10) {
-//     console.log("no type 10")
-// } else {
-//     console.log("Good")
-// }
+init();
