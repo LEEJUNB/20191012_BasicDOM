@@ -5,9 +5,8 @@ title.innerHTML = "GOODD";
 const CLICKED_CLASS = "clicked";  // className을 만듦
 
 function handleClick(){
-    const currentClass = title.className; // Q.className : id(title)과 함께있는 class를 의미
-    console.log(currentClass);
-    if(currentClass !== CLICKED_CLASS){ 
+    const hasClass = title.classList.contains(CLICKED_CLASS);
+    if(!hasClass){ 
         title.classList.add(CLICKED_CLASS); // classList에 쌓임, but 하나의 클래스만 체크가능
     } else {
         title.classList.remove(CLICKED_CLASS);
