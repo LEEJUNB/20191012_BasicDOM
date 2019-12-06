@@ -8,9 +8,9 @@ function handleClick(){
     const currentClass = title.className; // Q.className : id(title)과 함께있는 class를 의미
     console.log(currentClass);
     if(currentClass !== CLICKED_CLASS){ 
-        title.className = CLICKED_CLASS; // clicked로 변경하면서 clicked에 지정된 css속성도 적용 
+        title.classList.add(CLICKED_CLASS); // classList에 쌓임, but 하나의 클래스만 체크가능
     } else {
-        title.className = "";
+        title.classList.remove(CLICKED_CLASS);
     }
 }
 
