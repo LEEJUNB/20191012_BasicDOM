@@ -1,8 +1,18 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input");
 
-function init(){
+const USER_LS = "currentUser"
 
+
+function loadName(){
+    const currentUser = localStorage.getItem(USER_LS);
+    if(currentUser === null){
+    } else {
+
+    }
+}
+function init(){
+    loadName();
 }
 
 init();
